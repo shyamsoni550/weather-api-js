@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Api-Handaling</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="input-container">
+        <div class="d-flex align-items-center mb-3">
+          <input
+            type="text"
+            id="city-input"
+            class="form-control me-2"
+            placeholder="Enter a City to search"
+          />
+          <button id="get-weather-btn">
+            Get Weather
+          </button>
+        </div>
+        <div id="weather-info" class="hidden">
+          <h2 id="city-name">
+            <i class="fa-solid fa-city"></i>
+            <span id="city-name-text"></span>
+          </h2>
+          <p id="tempreature">
+            <i class="fa-solid fa-temperature-half"></i>
+            <span id="tempreature-text"></span>
+          </p>
+          <p id="description">
+            <i class="fa-solid fa-cloud-sun"></i>
+            <span id="description-text"></span>
+          </p>
+        </div>
+        <p id="error-message" class="hidden">
+          City Not Found. Please Try Again
+        </p>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
