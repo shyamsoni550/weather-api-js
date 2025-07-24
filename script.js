@@ -9,12 +9,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const API_KEY = "cec0bd74b41cc115a9d56215f789c118";
 
     getWeatherBtn.addEventListener("click", async () => {
+        if (getWeatherBtn.textContent === "Clear Weather") {
+            // Reset the UI
+            cityinput.value = "";
+            weatherinfo.classList.add("hidden");
+            errormessage.classList.add("hidden");
+            getWeatherBtn.textContent = "Get Weather";
+            cityinput.focus();
+            return;
+        }
+
         const city = cityinput.value.trim();
         if (!city) return;
 
         try {
             const weatherdata = await fetchWeatherData(city);
             displayWeatherData(weatherdata);
+            getWeatherBtn.textContent = "Clear Weather";
         } catch (error) {
             showerror();
         }
